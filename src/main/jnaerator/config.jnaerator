@@ -1,0 +1,4 @@
+-package test
+-library test
+-runtime JNA
+src/main/lib/libtest.h
