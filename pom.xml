@@ -35,4 +35,29 @@
         </plugins>
 
     </build>
+
+    <repositories>
+        <repository>
+            <id>sonatype</id>
+            <name>Sonatype OSS Snapshots Repository</name>
+            <url>http://oss.sonatype.org/content/groups/public</url>
+        </repository>
+        <!-- For old snapshots, please use groupId `com.jnaerator` and the following repo -->
+        <repository>
+            <id>nativelibs4java-repo</id>
+            <url>http://nativelibs4java.sourceforge.net/maven</url>
+        </repository>
+    </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>sonatype</id>
+            <name>Sonatype OSS Snapshots Repository</name>
+            <url>http://oss.sonatype.org/content/groups/public</url>
+        </pluginRepository>
+        <!-- For old snapshots, please use groupId `com.jnaerator` and the following repo -->
+        <pluginRepository>
+            <id>nativelibs4java-repo</id>
+            <url>http://nativelibs4java.sourceforge.net/maven</url>
+        </pluginRepository>
+    </pluginRepositories>
 </project>
