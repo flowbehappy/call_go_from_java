@@ -72,6 +72,8 @@ public class GolibUtils {
             return new String(content, "utf-8");
         } catch (UnsupportedEncodingException e) {
             throw new RuntimeException(e);
+        } finally {
+            unsafe.freeMemory(Pointer.nativeValue(gstr));
         }
     }
 }
