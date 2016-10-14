@@ -48,11 +48,28 @@ public class GolibUtils {
         }
     }
 
-    public static String gstr2jstr(GoString.ByValue gstr) {
+    // "len|content"
+    public static String gstr2jstr(Pointer gstr) {
         try {
-            byte[] bytes = new byte[(int) gstr.n];
-            gstr.p.read(0, bytes, 0, bytes.length);
-            return new String(bytes, "utf-8");
+            int len = -1;
+            for (int i = 0; i < 10; i++) {
+                if (gstr.getByte(i) == '|') {
+                    len = i;
+                }
+            }
+            if (len == -1) {
+                return null;
+            }
+            byte[] lenStr = new byte[len];
+            gstr.read(0, lenStr, 0, len);
+            int contentLen = Integer.parseInt(new String(lenStr, "utf-8"));
+            if (contentLen < 0 || contentLen > 1000000) {
+                // illegal len, something went wrong.
+                return null;
+            }
+            byte[] content = new byte[contentLen];
+            gstr.read(len + 1, content, 0, contentLen);
+            return new String(content, "utf-8");
         } catch (UnsupportedEncodingException e) {
             throw new RuntimeException(e);
         }

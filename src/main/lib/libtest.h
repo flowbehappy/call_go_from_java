@@ -52,7 +52,7 @@ extern "C" {
 #endif
 
 
-extern GoString Parse(GoString p0);
+extern char* Parse(GoString p0);
 
 #ifdef __cplusplus
 }

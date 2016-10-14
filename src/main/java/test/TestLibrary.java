@@ -2,6 +2,7 @@ package test;
 import com.sun.jna.Library;
 import com.sun.jna.Native;
 import com.sun.jna.NativeLibrary;
+import com.sun.jna.Pointer;
 import test.GoString.ByValue;
 /**
  * JNA Wrapper for library <b>test</b><br>
@@ -14,8 +15,8 @@ public interface TestLibrary extends Library {
 	public static final NativeLibrary JNA_NATIVE_LIB = NativeLibrary.getInstance(TestLibrary.JNA_LIBRARY_NAME);
 	public static final TestLibrary INSTANCE = (TestLibrary)Native.loadLibrary(TestLibrary.JNA_LIBRARY_NAME, TestLibrary.class);
 	/**
-	 * Original signature : <code>GoString Parse(GoString)</code><br>
+	 * Original signature : <code>char* Parse(GoString)</code><br>
 	 * <i>native declaration : src/main/lib/libtest.h:55</i>
 	 */
-	ByValue Parse(ByValue p0);
+	Pointer Parse(ByValue p0);
 }
