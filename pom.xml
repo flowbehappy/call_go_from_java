@@ -5,17 +5,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.flow.test</groupId>
-    <artifactId>javatest</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <artifactId>call_go_from_java</artifactId>
+    <version>1.0</version>
 
     <dependencies>
-        <!--<dependency>-->
-        <!--<groupId>com.sf.notify</groupId>-->
-        <!--<artifactId>notify_web</artifactId>-->
-        <!--<version>1.0</version>-->
-        <!--<scope>system</scope>-->
-        <!--<systemPath>${project.basedir}/lib/notify_web-1.0.jar</systemPath>-->
-        <!--</dependency>-->
         <dependency>
             <groupId>commons-lang</groupId>
             <artifactId>commons-lang</artifactId>
