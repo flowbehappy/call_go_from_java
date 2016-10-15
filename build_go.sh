@@ -13,7 +13,5 @@ fi
 
 go build -v -x -buildmode=c-shared -o src/main/lib/libtest.${LIB_SUBFIX} src/main/lib/test.go
 rm -rf lib/*
-mkdir lib
+mkdir -p lib
 mv src/main/lib/libtest.${LIB_SUBFIX} lib/
-
-mvn jnaerator:generate
