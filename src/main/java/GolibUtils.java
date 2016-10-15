@@ -55,6 +55,7 @@ public class GolibUtils {
             for (int i = 0; i < 10; i++) {
                 if (gstr.getByte(i) == '|') {
                     len = i;
+                    break;
                 }
             }
             if (len == -1) {
